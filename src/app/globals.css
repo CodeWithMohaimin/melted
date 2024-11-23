@@ -7,15 +7,79 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.cc {
+  max-width: 1024px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, -0.5598rem + 6.734vw, 3.75rem);
+  padding-right: clamp(1.25rem, -0.5598rem + 6.734vw, 3.75rem);
+}
+
+.h1 {
+  /* 40/22 */
+  font-size: clamp(1.375rem, 0.5606rem + 3.0303vw, 2.5rem);
+  line-height: 1.1;
+  color: #FF2D00;
+}
+
+.navbarH1 {
+  /* 30/20 */
+  font-size: clamp(1.25rem, 0.7976rem + 1.6835vw, 1.875rem);
+  line-height: 1.1;
+  color: #FF2D00;
+}
+
+.h2 {
+  /* 20/10 */
+  font-size: clamp(0.625rem, 0.1726rem + 1.6835vw, 1.25rem);
+  line-height: 1.1;
+  color: #FF2D00;
+}
+
+.p {
+  /* 22/15 */
+  font-size: clamp(0.9375rem, 0.6208rem + 1.1785vw, 1.375rem);
+  line-height: 1.1;
+  color: #FF2D00;
+}
+
+
+/* Stagger  */
+
+.stagger-container>* {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.stagger-container>*:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.stagger-container>*:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.stagger-container>*:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
